@@ -3,6 +3,8 @@
 ## Recursos
 
 - Criar, visualizar, atualizar e excluir leads.
+- Criar, visualizar, atualizar e excluir campanhas.
+- Criar, visualizar, atualizar e excluir clientes.
 - Integração com clientes e campanhas.
 - Validação de dados de entrada.
 - Utiliza banco de dados Oracle.
