@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "51cd135f-86ab-470b-9753-019ae08b63c2",
+		"name": "api-dotnet-leadtech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19973173",
+		"_collection_link": "https://crimson-sunset-723237.postman.co/workspace/New-Team-Workspace~4ed1f29e-3683-4f85-8088-ed690aa8a8f0/collection/19973173-51cd135f-86ab-470b-9753-019ae08b63c2?action=share&source=collection_link&creator=19973173"
+	},
+	"item": [
+		{
+			"name": "Campanhas",
+			"item": [
+				{
+					"name": "get-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/campanhas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"campanhas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/campanhas/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"campanhas",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-campanha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"NomeCampanha\": \"Minha Campanha\",\r\n  \"DataInicio\": \"2024-05-30T08:00:00\",\r\n  \"DataTermino\": \"2024-06-30T08:00:00\",\r\n  \"Custo\": 100.50,\r\n  \"Roi\": 0.25,\r\n  \"Cliente\": {\r\n    \"Nome\": \"Novo Cliente\",\r\n    \"Setor\": \"Setor C\",\r\n    \"TaxaChurn\": 0.03,\r\n    \"DataCriacao\": \"24/05/24 10:00:00,000000000\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/campanhas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"campanhas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-campanha",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCampanha\": 1,\r\n  \"nomeCampanha\": \"Campanha de Natal\",\r\n  \"dataInicio\": \"2024-11-01\",\r\n  \"dataTermino\": \"2024-12-31\",\r\n  \"custo\": 8000.00,\r\n  \"roi\": 0.35,\r\n  \"tbClienteIdCliente\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/campanhas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"campanhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-campanha",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/campanhas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"campanhas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "get-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5269/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Novo Cliente\",\r\n    \"setor\": \"Setor C\",\r\n    \"taxaChurn\": 0.03,\r\n    \"dataCriacao\": \"2024-05-24T10:00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put-client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 1,\r\n    \"nome\": \"Cliente Atualizado\",\r\n    \"setor\": \"Setor B\",\r\n    \"taxaChurn\": 0.08,\r\n    \"dataCriacao\": \"2024-05-24T11:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "get-all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/leads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"leads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/leads/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"leads",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-lead",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Novo Lead\",\r\n    \"Email\": \"novolead@example.com\",\r\n    \"Status\": \"Ativo\",\r\n    \"DataCriacao\": \"2024-05-20T10:00:00\",\r\n    \"TbClienteIdCliente\": 1,\r\n    \"TbCampanhasIdCampanha\": 1,\r\n    \"Cliente\":{\r\n        \"nome\": \"Novo Cliente\",\r\n        \"setor\": \"Setor C\",\r\n        \"taxaChurn\": 0.03,\r\n        \"dataCriacao\": \"24/05/24 10:00:00,000000000\"\r\n    },\r\n    \"Campanha\":{\r\n        \"nomeCampanha\": \"Campanha de Natal\",\r\n        \"dataInicio\": \"2024-11-01\",\r\n        \"dataTermino\": \"2024-12-31\",\r\n        \"custo\": 8000,\r\n        \"roi\": 0.35,\r\n        \"tbClienteIdCliente\": 2,\r\n        \"Cliente\": {\r\n            \"Nome\": \"Novo Cliente\",\r\n            \"Setor\": \"Setor C\",\r\n            \"TaxaChurn\": 0.03,\r\n            \"DataCriacao\": \"24/05/24 10:00:00,000000000\"\r\n        }\r\n    }\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/leads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"leads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-lead",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdLead\": 1,\r\n    \"Nome\": \"Novo Lead Atualizado\",\r\n    \"Email\": \"novolead@example.com\",\r\n    \"Status\": \"Inativo\",\r\n    \"DataCriacao\": \"2024-05-20T10:00:00\",\r\n    \"TbClienteIdCliente\": 2,\r\n    \"TbCampanhasIdCampanha\": 1,\r\n    \"Cliente\": {\r\n        \"Nome\": \"Novo Cliente Atualizado\",\r\n        \"Setor\": \"Setor D\",\r\n        \"TaxaChurn\": 0.05,\r\n        \"DataCriacao\": \"2024-05-25T10:00:00\"\r\n    },\r\n    \"Campanha\": {\r\n        \"NomeCampanha\": \"Campanha de Ano Novo\",\r\n        \"DataInicio\": \"2024-12-01T00:00:00\",\r\n        \"DataTermino\": \"2025-01-15T00:00:00\",\r\n        \"Custo\": 10000,\r\n        \"Roi\": 0.25,\r\n        \"TbClienteIdCliente\": 2,\r\n        \"Cliente\": {\r\n            \"Nome\": \"Novo Cliente Atualizado\",\r\n            \"Setor\": \"Setor D\",\r\n            \"TaxaChurn\": 0.05,\r\n            \"DataCriacao\": \"2024-05-25T10:00:00\"\r\n        }\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5269/api/leads/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"leads",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-lead",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5269/api/leads/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5269",
+							"path": [
+								"api",
+								"leads",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
