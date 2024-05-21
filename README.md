@@ -26,7 +26,7 @@ git clone https://github.com/your-username/LeadTechAPI.git
 3. Configure a conexão com o banco de dados(caso queria no sue banco) Oracle no arquivo `appsettings.json`.
 
 4. Execute o projeto:
-5. 
+   
 ```bash
 dotnet build
 ```
@@ -38,6 +38,6 @@ dotnet run
 A aplicação estará disponível provavelmente em: `https://localhost:5269`.
 Swagger: `http://localhost:5269/swagger/index.html`
 
-[Arquivo do Postman para baixar e importar]()
+[Arquivo do Postman para baixar e importar](https://github.com/charlenefialho/LeadTechAPI/blob/master/api-dotnet-leadtech.postman_collection.json)
 
 
