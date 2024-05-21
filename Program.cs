@@ -1,34 +1,32 @@
-using LeadTech.Models;
+using LeadTechAPI.Model;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona serviços ao contêiner
-builder.Services.AddControllersWithViews();
+// Adicione a conexão com o banco de dados Oracle
+builder.Services.AddDbContext<LeadTechAPIContext>(options =>
+{
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleDbConnection"));
+});
 
-// Configura o contexto do banco de dados
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
+// Adicione os serviços necessários ao contêiner.
+builder.Services.AddControllers();
+
+// Aprenda mais sobre a configuração do Swagger/OpenAPI em https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configura o pipeline de requisição HTTP
-if (!app.Environment.IsDevelopment())
+// Configure o pipeline de solicitação HTTP.
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // O valor padrão de HSTS é 30 dias. Você pode querer mudar isso para cenários de produção, veja https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 
 app.Run();
